@@ -1,6 +1,4 @@
 /* eslint-disable no-console */
-import { v4 as uuid } from 'uuid';
-
 import { model as User } from '../../website/server/models/user';
 
 const MIGRATION_NAME = 'YYYYMMDD_take_this';
@@ -20,23 +18,89 @@ async function updateUser (user) {
   if (typeof user.items.gear.owned.back_special_takeThis !== 'undefined') {
     push = false;
   } else if (typeof user.items.gear.owned.body_special_takeThis !== 'undefined') {
-    set['items.gear.owned.back_special_takeThis'] = false;
-    push = { pinnedItems: { type: 'marketGear', path: 'gear.flat.back_special_takeThis', _id: uuid() } };
+    set['items.gear.owned.back_special_takeThis'] = true;
+    push = {
+      notifications: {
+        type: 'ITEM_RECEIVED',
+        data: {
+          icon: 'notif_back_special_takeThis',
+          title: 'You received a Challenge reward!',
+          text: 'Be the hero of your own story with your new Take This Wings!',
+          destination: '/inventory/items',
+        },
+        seen: false,
+      },
+    };
   } else if (typeof user.items.gear.owned.head_special_takeThis !== 'undefined') {
-    set['items.gear.owned.body_special_takeThis'] = false;
-    push = { pinnedItems: { type: 'marketGear', path: 'gear.flat.body_special_takeThis', _id: uuid() } };
+    set['items.gear.owned.body_special_takeThis'] = true;
+    push = {
+      notifications: {
+        type: 'ITEM_RECEIVED',
+        data: {
+          icon: 'notif_body_special_takeThis',
+          title: 'You received a Challenge reward!',
+          text: 'Tackle any obstacle with your new Take This Pauldrons!',
+          destination: '/inventory/items',
+        },
+        seen: false,
+      },
+    };
   } else if (typeof user.items.gear.owned.armor_special_takeThis !== 'undefined') {
-    set['items.gear.owned.head_special_takeThis'] = false;
-    push = { pinnedItems: { type: 'marketGear', path: 'gear.flat.head_special_takeThis', _id: uuid() } };
+    set['items.gear.owned.head_special_takeThis'] = true;
+    push = {
+      notifications: {
+        type: 'ITEM_RECEIVED',
+        data: {
+          icon: 'notif_head_special_takeThis',
+          title: 'You received a Challenge reward!',
+          text: 'Protect your focus with your new Take This Helm!',
+          destination: '/inventory/items',
+        },
+        seen: false,
+      },
+    };
   } else if (typeof user.items.gear.owned.weapon_special_takeThis !== 'undefined') {
-    set['items.gear.owned.armor_special_takeThis'] = false;
-    push = { pinnedItems: { type: 'marketGear', path: 'gear.flat.armor_special_takeThis', _id: uuid() } };
+    set['items.gear.owned.armor_special_takeThis'] = true;
+    push = {
+      notifications: {
+        type: 'ITEM_RECEIVED',
+        data: {
+          icon: 'notif_broad_armor_special_takeThis',
+          title: 'You received a Challenge reward!',
+          text: 'Stand strong through any battle with your new Take This Armor!',
+          destination: '/inventory/items',
+        },
+        seen: false,
+      },
+    };
   } else if (typeof user.items.gear.owned.shield_special_takeThis !== 'undefined') {
-    set['items.gear.owned.weapon_special_takeThis'] = false;
-    push = { pinnedItems: { type: 'marketGear', path: 'gear.flat.weapon_special_takeThis', _id: uuid() } };
+    set['items.gear.owned.weapon_special_takeThis'] = true;
+    push = {
+      notifications: {
+        type: 'ITEM_RECEIVED',
+        data: {
+          icon: 'notif_weapon_special_takeThis',
+          title: 'You received a Challenge reward!',
+          text: 'Slash through the toughest of tasks with your new Take This Sword!',
+          destination: '/inventory/items',
+        },
+        seen: false,
+      },
+    };
   } else {
-    set['items.gear.owned.shield_special_takeThis'] = false;
-    push = { pinnedItems: { type: 'marketGear', path: 'gear.flat.shield_special_takeThis', _id: uuid() } };
+    set['items.gear.owned.shield_special_takeThis'] = true;
+    push = {
+      notifications: {
+        type: 'ITEM_RECEIVED',
+        data: {
+          icon: 'notif_shield_special_takeThis',
+          title: 'You received a Challenge reward!',
+          text: 'Deflect the meanest of distractions with your new Take This Shield!',
+          destination: '/inventory/items',
+        },
+        seen: false,
+      },
+    };
   }
 
   if (count % progressCount === 0) console.warn(`${count} ${user._id}`);
