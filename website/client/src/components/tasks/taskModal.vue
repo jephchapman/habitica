@@ -147,13 +147,14 @@
                 ></div>
               </div>
               <input
-                v-model="task.value"
+                v-model="taskValue"
                 class="form-control"
                 type="number"
                 required="required"
                 placeholder="Enter a Value"
-                step="0.01"
+                step="1"
                 min="0"
+                @blur="validateValue()"
               >
             </div>
           </div>
@@ -1172,6 +1173,7 @@
 <script>
 import axios from 'axios';
 import moment from 'moment';
+import isNumber from 'lodash/isNumber';
 import Datepicker from '@/components/ui/datepicker';
 import toggleCheckbox from '@/components/ui/toggleCheckbox';
 import markdownDirective from '@/directives/markdown';
@@ -1251,6 +1253,7 @@ export default {
         { key: 'per', label: 'perception', description: 'perTaskText' },
       ],
       calendarHighlights: { dates: [new Date()] },
+      taskValue: 0,
     };
   },
   computed: {
@@ -1431,8 +1434,9 @@ export default {
       if (!this.canSave) return;
       if (this.newChecklistItem) this.addChecklistItem();
 
-      if (this.task.type === 'reward' && this.task.value === '') {
-        this.task.value = 0;
+      if (this.task.type === 'reward') {
+        this.validateValue();
+        this.task.value = this.taskValue;
       }
 
       if (this.purpose === 'create') {
@@ -1556,6 +1560,10 @@ export default {
       const tagResult = await this.createTag({ name });
 
       this.task.tags.push(tagResult.id);
+    },
+    validateValue () {
+      this.taskValue = Number(this.taskValue);
+      this.taskValue = Math.floor(this.taskValue);
     },
   },
 };
