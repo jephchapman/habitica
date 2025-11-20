@@ -18,9 +18,6 @@
             <p v-if="group.purchased.plan.planId">
               {{ $t('groupSubscriptionPrice') }}
             </p>
-            <small>
-              {{ $t('groupPlanBillingFYI') }}
-            </small>
           </td>
         </tr>
         <tr v-if="group.purchased.plan.extraMonths">
@@ -60,12 +57,16 @@
       >
         {{ $t('subUpdateCard') }}
       </div>
-      <div
-        v-if="!group.purchased.plan.dateTerminated"
-        class="btn btn-sm btn-danger"
-        @click="cancelSubscriptionConfirm({group: group})"
-      >
-        {{ $t('cancelGroupSub') }}
+      <div v-if="!group.purchased.plan.dateTerminated">
+        <div
+          class="btn btn-sm btn-danger"
+          @click="cancelSubscriptionConfirm({group: group})"
+        >
+          {{ $t('cancelGroupSub') }}
+        </div>
+        <small v-once>
+          {{ $t('groupPlanBillingFYIShort') }}
+        </small>
       </div>
     </div>
   </div>
