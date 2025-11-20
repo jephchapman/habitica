@@ -18,6 +18,9 @@
             <p v-if="group.purchased.plan.planId">
               {{ $t('groupSubscriptionPrice') }}
             </p>
+            <small>
+              {{ $t('groupPlanBillingFYI') }}
+            </small>
           </td>
         </tr>
         <tr v-if="group.purchased.plan.extraMonths">
