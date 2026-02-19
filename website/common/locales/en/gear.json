@@ -1428,9 +1428,9 @@
   "armorSpecialSpring2026RogueText": "Birch Bark Armor",
   "armorSpecialSpring2026RogueNotes": "Withstand inevitable spring rains as well as light breezes. Increases Perception by <%= per %>. Limited Edition Spring 2026 Gear.",
   "armorSpecialSpring2026HealerText": "Snowdrop Gown",
-  "armorSpecialSpring2026HealerNotes": "Glide gracefully from a cold, dark winter into glorious Spring. Increases Constitution by <%= con %>. Limited Edition Spring 2026 Gear.",
+  "armorSpecialSpring2026HealerNotes": "Glide gracefully from a cold, dark winter into glorious spring. Increases Constitution by <%= con %>. Limited Edition Spring 2026 Gear.",
   "armorSpecialSpring2026MageText": "Maypole Dancer Outfit",
-  "armorSpecialSpring2026MageNotes": "Arrive ready to dance and picnic and enjoy the warm weather Spring brings. Increases Intelligence by <%= int %>. Limited Edition Spring 2026 Gear.",
+  "armorSpecialSpring2026MageNotes": "Arrive ready to dance, picnic, and enjoy the warm weather spring brings. Increases Intelligence by <%= int %>. Limited Edition Spring 2026 Gear.",
 
   "armorMystery201402Text": "Messenger Robes",
   "armorMystery201402Notes": "Shimmering and strong, these robes have many pockets to carry letters. Confers no benefit. February 2014 Subscriber Item.",
@@ -3132,9 +3132,9 @@
   "shieldSpecialSpring2026WarriorText": "Frog Warrior Candelabra",
   "shieldSpecialSpring2026WarriorNotes": "Not only can this candelabra light your way, you can use it to melt any lingering snow and ice. Increases Constitution by <%= con %>. Limited Edition Spring 2026 Gear.",
   "shieldSpecialSpring2026RogueText": "Spring Branch",
-  "shieldSpecialSpring2026RogueNotes": "Reach out and reach high with these branches. And they double as a back scratcher in a pinch. Increases Strength by <%= str %>. Limited Edition Spring 2026 Gear.",
+  "shieldSpecialSpring2026RogueNotes": "Reach out and reach high with these branches. They double as a back scratcher in a pinch. Increases Strength by <%= str %>. Limited Edition Spring 2026 Gear.",
   "shieldSpecialSpring2026HealerText": "Snowdrop Leaf",
-  "shieldSpecialSpring2026HealerNotes": "Create a light breeze with this fan as the days grow warmer. And it doubles as a writing utensil in a pinch. Increases Constitution by <%= con %>. Limited Edition Spring 2026 Gear.",
+  "shieldSpecialSpring2026HealerNotes": "Create a light breeze with this fan as the days grow warmer. It doubles as a writing utensil in a pinch. Increases Constitution by <%= con %>. Limited Edition Spring 2026 Gear.",
 
   "shieldMystery201601Text": "Resolution Slayer",
   "shieldMystery201601Notes": "This blade can be used to parry away all distractions. Confers no benefit. January 2016 Subscriber Item.",
